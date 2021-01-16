@@ -13,7 +13,7 @@ class StudentsNafService {
       return { ...student, neededNafGrade: naf };
     }
 
-    return student;
+    return { ...student, neededNafGrade: 0 };
   }
 }
 module.exports = StudentsNafService;

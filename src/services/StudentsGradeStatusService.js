@@ -18,7 +18,6 @@ class StudentsGradeStatusService {
       return {
         ...student,
         studentClassCondition: "Aprovado",
-        neededNafGrade: 0,
       };
     }
 
@@ -31,7 +30,6 @@ class StudentsGradeStatusService {
       return {
         ...student,
         studentClassCondition: "Reprovado por Nota",
-        neededNafGrade: 0,
       };
     }
 

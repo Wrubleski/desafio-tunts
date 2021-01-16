@@ -16,7 +16,6 @@ class StudentsAbscenseService {
       return {
         ...student,
         studentClassCondition: "Reprovado por Falta",
-        neededNafGrade: 0,
       };
     }
 
