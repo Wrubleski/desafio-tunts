@@ -7,6 +7,12 @@ class StudentsAbscenseService {
     console.log(
       "Checking if student " + student.name + " will be held back for absence."
     );
+    if (isNaN(parseInt(student.absence))) {
+      return {
+        ...student,
+        studentClassCondition: "ERROR, student.absence is not a number.",
+      };
+    }
     const absenceLimit = this.classInformation.totalSemesterClasses * 0.25;
 
     if (student.absence > absenceLimit) {
