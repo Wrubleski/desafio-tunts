@@ -1,8 +1,19 @@
 class StudentsGradeStatusService {
   updateGradeStatus(student) {
     console.log("Checking student " + student.name + "'s grade.");
-
     const { testOne, testTwo, testThree } = student;
+
+    if (
+      !Number.isInteger(testOne) ||
+      !Number.isInteger(testTwo) ||
+      !Number.isInteger(testThree)
+    ) {
+      return {
+        ...student,
+        studentClassCondition: "ERROR. Test grade must be an integer.",
+      };
+    }
+
     const averageGrade = (testOne + testTwo + testThree) / 3;
 
     if (student.studentClassCondition === "Reprovado por Falta") {
@@ -13,7 +24,7 @@ class StudentsGradeStatusService {
       console.log(
         "Student " +
           student.name +
-          " will be moved on to the next grade. Average grade greater than 70."
+          " will be moved on to the next grade. Average grade greater or equal to 70."
       );
       return {
         ...student,
