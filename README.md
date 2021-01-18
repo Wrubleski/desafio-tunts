@@ -18,3 +18,9 @@ Run with:
 
 You'll need a Google Service Account to authenticate the API call.
 Get yours at the google developer console, rename it to service-key.json and drop it on the project folder.
+
+## Test
+
+Will run tests in the three critical services, StudentsAbscenseService, StudentsGradeStatusService, and StudentsNafService.
+
+> npm test
