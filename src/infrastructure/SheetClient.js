@@ -1,3 +1,6 @@
+// The SheetClient is responsible for making the calls to the google sheets API,
+// based on the parsed data received from the StudentsRepository.
+
 class SheetClient {
   constructor(auth, spreadsheetId, sheets) {
     this.auth = auth;

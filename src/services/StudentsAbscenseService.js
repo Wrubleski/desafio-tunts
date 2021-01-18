@@ -1,8 +1,14 @@
+/**
+ * All operations that involve students absence should go here.
+ */
+
 class StudentsAbscenseService {
   constructor(classInformation) {
     this.classInformation = classInformation;
   }
 
+  // Right now, I only have the isHeldBackForAbsence method, which determines
+  // that the student will be held back if he have more than 25% absence rate.
   isHeldBackForAbsence(student) {
     console.log(
       "Checking if student " + student.name + " will be held back for absence."

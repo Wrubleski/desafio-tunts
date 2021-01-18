@@ -1,3 +1,7 @@
+// Using mocha to run some simple tests.
+// Since the mocha syntax makes it simple to understand what is being tested,
+// I won't document how the tests works.
+
 "use strict";
 
 const assert = require("assert");

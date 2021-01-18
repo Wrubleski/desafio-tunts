@@ -1,3 +1,7 @@
+/**
+ * Apply all the required changes to the students, and finally update the sheet with the data.
+ */
+
 const StudentsAbscenseService = require("./StudentsAbscenseService");
 const StudentsGradeStatusService = require("./StudentsGradeStatusService");
 const StudentsNafService = require("./StudentsNafService");
@@ -14,6 +18,8 @@ class CalculateStudentsGradeService {
     );
     const studentsGradeStatusService = new StudentsGradeStatusService();
     const studentsNafService = new StudentsNafService();
+
+    // Iterating over the students array, and updating its required information.
     students = students.map((student) => {
       student = studentsAbscenseService.isHeldBackForAbsence(student);
       student = studentsGradeStatusService.updateGradeStatus(student);
@@ -22,6 +28,7 @@ class CalculateStudentsGradeService {
       return student;
     });
 
+    // Finally, update the spreadsheet with the required information.
     this.studentsRepository.bulkUpdate(students);
   }
 }

@@ -1,3 +1,7 @@
+/**
+ * The ClassRepository's responsibility is to parse the class information,
+ *  like class name and total semester class.
+ */
 class ClassRepository {
   constructor(sheetClient) {
     this.sheetClient = sheetClient;

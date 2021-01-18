@@ -1,7 +1,15 @@
+/**
+ * The StudentsRepository's responsibility is to parse the data and communicate with the SheetClient,
+ * which in turn make the call to the API with the data received.
+ */
+
 class StudentsRepository {
   constructor(sheetClient) {
     this.sheetClient = sheetClient;
   }
+
+  // Gets the data from the sheet engenharia_de_software from the spreadsheet initialized
+  // on the SheetClient. The data range is defined here, after the name of the sheet, in A1 notation.
 
   async getStudents() {
     console.log("Getting students information data.");
@@ -22,6 +30,8 @@ class StudentsRepository {
     });
   }
 
+  // Parse the data and update the sheet in the specified range.
+  // Each array nested on the primary one is equal to one line on the sheet.
   async bulkUpdate(students) {
     const rangeStart = "G4";
     const rangeEnd = ":H27";

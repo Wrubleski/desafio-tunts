@@ -1,4 +1,10 @@
+/**
+ * All logic involving grades should go here.
+ */
+
 class StudentsGradeStatusService {
+  // updateGradeStatus calculate the avarege grade and update the
+  // studentClassCondition's student propriety accordingly.
   updateGradeStatus(student) {
     console.log("Checking student " + student.name + "'s grade.");
     const { testOne, testTwo, testThree } = student;

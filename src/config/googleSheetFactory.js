@@ -1,3 +1,6 @@
+// The sole purpose of this file is to return a new, authenticated instance of
+// the sheetClient class, linked with the required spreadsheet ID.
+
 const key = require("../../service-key.json");
 const SheetClient = require("../infrastructure/SheetClient");
 
