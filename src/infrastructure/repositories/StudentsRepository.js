@@ -1,11 +1,11 @@
 class StudentsRepository {
-  constructor(sheetService) {
-    this.sheetService = sheetService;
+  constructor(sheetClient) {
+    this.sheetClient = sheetClient;
   }
 
   async getStudents() {
     console.log("Getting students information data.");
-    const { values: data } = await this.sheetService.getData(
+    const { values: data } = await this.sheetClient.getData(
       "engenharia_de_software!A4:H27"
     );
     return data.map((currElement) => {
@@ -30,7 +30,7 @@ class StudentsRepository {
       return [student.studentClassCondition, student.neededNafGrade];
     });
 
-    await this.sheetService.putData(rangeStart, data, rangeEnd);
+    await this.sheetClient.putData(rangeStart, data, rangeEnd);
   }
 }
 module.exports = StudentsRepository;

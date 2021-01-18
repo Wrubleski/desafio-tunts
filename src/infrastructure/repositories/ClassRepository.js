@@ -1,11 +1,11 @@
 class ClassRepository {
-  constructor(sheetService) {
-    this.sheetService = sheetService;
+  constructor(sheetClient) {
+    this.sheetClient = sheetClient;
   }
 
   async getClassInformation() {
     console.log("Getting class informatin data.");
-    const { values: data } = await this.sheetService.getData(
+    const { values: data } = await this.sheetClient.getData(
       "engenharia_de_software!A1:B2"
     );
 

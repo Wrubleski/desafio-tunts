@@ -1,5 +1,5 @@
 const key = require("../../service-key.json");
-const SheetService = require("../services/SheetService");
+const SheetClient = require("../infrastructure/SheetClient");
 
 const { google } = require("googleapis");
 const sheets = google.sheets("v4");
@@ -12,6 +12,6 @@ const jwtClient = new google.auth.JWT(key.client_email, null, key.private_key, [
   "https://www.googleapis.com/auth/spreadsheets",
 ]);
 
-exports.createSheetService = () => {
-  return new SheetService(jwtClient, spreadSheetID, sheets);
+exports.createSheetClient = () => {
+  return new SheetClient(jwtClient, spreadSheetID, sheets);
 };

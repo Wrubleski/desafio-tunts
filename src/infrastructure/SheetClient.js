@@ -1,4 +1,4 @@
-class SheetService {
+class SheetClient {
   constructor(auth, spreadsheetId, sheets) {
     this.auth = auth;
     this.spreadsheetId = spreadsheetId;
@@ -38,4 +38,4 @@ class SheetService {
   }
 }
 
-module.exports = SheetService;
+module.exports = SheetClient;
