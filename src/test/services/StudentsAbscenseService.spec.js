@@ -11,7 +11,7 @@ const studentsAbscenseService = new StudentsAbscenseService({
 
 describe("Students Abssense Service Test", () => {
   before(() => {
-    console.log("Starting test on StudentsAbscenseService class.");
+    console.log("Starting tests on StudentsAbscenseService class.");
   });
 
   describe("Testing isHeldBackForAbsence method.", () => {
@@ -109,7 +109,7 @@ describe("Students Abssense Service Test", () => {
       );
     });
 
-    it("Should return studentClassCondition: 'Reprovado por Falta'", () => {
+    it("Should return studentClassCondition: 'ERROR, student.absence is not a number.'", () => {
       assert.deepStrictEqual(
         studentsAbscenseService.isHeldBackForAbsence({
           ...dummyStudent,
@@ -118,12 +118,12 @@ describe("Students Abssense Service Test", () => {
         {
           ...dummyStudent,
           absence: "30",
-          studentClassCondition: "Reprovado por Falta",
+          studentClassCondition: "ERROR, student.absence is not a number.",
         }
       );
     });
 
-    it("Should return studentClassCondition: 'ERROR, student.absence is not a number'", () => {
+    it("Should return studentClassCondition: 'ERROR, student.absence is not a number.'", () => {
       assert.deepStrictEqual(
         studentsAbscenseService.isHeldBackForAbsence({
           ...dummyStudent,
