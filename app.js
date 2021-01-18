@@ -22,7 +22,10 @@ async function main() {
     studentsRepository,
     classInformation
   );
-  calculateStudentsGradeService.studentAprovalStatus(students);
+  const updateStatus = await calculateStudentsGradeService.studentAprovalStatus(
+    students
+  );
+  console.log(updateStatus);
 }
 
 main();

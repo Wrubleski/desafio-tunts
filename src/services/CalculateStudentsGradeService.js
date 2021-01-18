@@ -12,7 +12,7 @@ class CalculateStudentsGradeService {
     this.classInformation = classInformation;
   }
 
-  studentAprovalStatus(students) {
+  async studentAprovalStatus(students) {
     const studentsAbscenseService = new StudentsAbscenseService(
       this.classInformation
     );
@@ -29,7 +29,8 @@ class CalculateStudentsGradeService {
     });
 
     // Finally, update the spreadsheet with the required information.
-    this.studentsRepository.bulkUpdate(students);
+    await this.studentsRepository.bulkUpdate(students);
+    return "Finished updating the spreadsheet.";
   }
 }
 
